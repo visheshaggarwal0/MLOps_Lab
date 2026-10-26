@@ -33,7 +33,7 @@ def generate_pdf():
     title_style = ParagraphStyle(
         'DocTitle',
         parent=styles['Normal'],
-        fontName='Helvetica-Bold',
+        fontName='Times-Bold',
         fontSize=18,
         leading=22,
         textColor=colors.HexColor('#0f172a'),
@@ -44,7 +44,7 @@ def generate_pdf():
     subtitle_style = ParagraphStyle(
         'DocSubtitle',
         parent=styles['Normal'],
-        fontName='Helvetica',
+        fontName='Times-Roman',
         fontSize=10,
         leading=14,
         textColor=colors.HexColor('#475569'),
@@ -54,7 +54,7 @@ def generate_pdf():
     section_heading = ParagraphStyle(
         'SectionHeading',
         parent=styles['Normal'],
-        fontName='Helvetica-Bold',
+        fontName='Times-Bold',
         fontSize=12,
         leading=16,
         textColor=colors.HexColor('#1e293b'),
@@ -65,7 +65,7 @@ def generate_pdf():
     body_style = ParagraphStyle(
         'BodyDark',
         parent=styles['Normal'],
-        fontName='Helvetica',
+        fontName='Times-Roman',
         fontSize=9.5,
         leading=14,
         textColor=colors.HexColor('#1e293b')
@@ -74,13 +74,13 @@ def generate_pdf():
     body_bold = ParagraphStyle(
         'BodyBold',
         parent=body_style,
-        fontName='Helvetica-Bold'
+        fontName='Times-Bold'
     )
 
     link_style = ParagraphStyle(
         'LinkStyle',
         parent=body_style,
-        fontName='Helvetica',
+        fontName='Times-Roman',
         fontSize=10,
         leading=14,
         textColor=colors.HexColor('#0969da')
@@ -108,8 +108,8 @@ def generate_pdf():
     student_data = [
         [Paragraph("<b>Student Name:</b>", body_style), Paragraph("Vishesh Aggarwal", body_style),
          Paragraph("<b>Roll Number:</b>", body_style), Paragraph("S24CSEU2521", body_style)],
-        [Paragraph("<b>Batch:</b>", body_style), Paragraph("Batch 2024–2028 (Session 2026–27 / EB05)", body_style),
-         Paragraph("<b>Date of Session:</b>", body_style), Paragraph("21 September 2026", body_style)]
+        [Paragraph("<b>Batch:</b>", body_style), Paragraph("Batch 2024–2028 (Session 2026–27)", body_style),
+         Paragraph("<b>Date of Session:</b>", body_style), Paragraph("4 October 2026", body_style)]
     ]
     
     t_student = Table(student_data, colWidths=[100, 160, 95, 160])
@@ -220,7 +220,7 @@ def generate_pdf():
 
     def add_header_footer(canvas, doc):
         canvas.saveState()
-        canvas.setFont('Helvetica', 8)
+        canvas.setFont('Times-Roman', 8.5)
         canvas.setFillColor(colors.HexColor('#64748b'))
         # Footer
         canvas.drawString(40, 22, "SCSE3040: Machine Learning Operations — Practical 05 Lab Submission")
